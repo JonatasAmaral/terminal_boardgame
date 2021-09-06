@@ -1,30 +1,70 @@
 {
   "$schema": "https://aka.ms/codetour-schema",
-  "title": "show board",
+  "title": "1 - show board",
   "steps": [
     {
       "file": "boardgame.py",
       "line": 7,
-      "description": "For each line of the full board",
-      "title": "Each line"
+      "description": "For each line of the full board, plus a _\"columns labeling\"_ one on top",
+      "title": "For each line"
     },
     {
       "file": "boardgame.py",
-      "line": 8,
-      "description": "For each column/cell in each line",
-      "title": "Each line's column"
+      "selection": {
+        "start": {
+          "line": 9,
+          "character": 2
+        },
+        "end": {
+          "line": 17,
+          "character": 23
+        }
+      },
+      "description": "If on the line of _\"columns labels\"_, print a blank space on first cell (to make room for lines labeling column), then each column's number in sequence",
+      "title": "1st line: print cols numbers"
     },
     {
       "file": "boardgame.py",
-      "description": "Print the cell symbol, with no new line character, for the whole line",
-      "line": 9,
-      "title": "print cell symbol"
+      "description": "If on one of the lines of the board itself.\n(not on labels line)",
+      "line": 19,
+      "title": "on board lines"
     },
     {
       "file": "boardgame.py",
-      "description": "Print just a \"new line\" character after the end of the line, to place next line below",
-      "line": 10,
-      "title": "\"new line\" after board's line end"
+      "selection": {
+        "start": {
+          "line": 22,
+          "character": 4
+        },
+        "end": {
+          "line": 24,
+          "character": 22
+        }
+      },
+      "description": "If is on _\"lines labels\"_ column (on each line's first cell) print the line number.",
+      "title": "1st cell: print line number"
+    },
+    {
+      "file": "boardgame.py",
+      "selection": {
+        "start": {
+          "line": 25,
+          "character": 4
+        },
+        "end": {
+          "line": 27,
+          "character": 35
+        }
+      },
+      "description": "If completely inside the board, print the cell's symbol",
+      "title": "inside board: print cell"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "print _\"new line\"_ character only, to put next board line below current one",
+      "line": 29,
+      "title": "move to new line"
     }
-  ]
+  ],
+  "description": "Describe how the code that print the board to the console works"
 }
