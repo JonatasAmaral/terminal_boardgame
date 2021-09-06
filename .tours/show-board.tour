@@ -1,0 +1,30 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "show board",
+  "steps": [
+    {
+      "file": "boardgame.py",
+      "line": 7,
+      "description": "For each line of the full board",
+      "title": "Each line"
+    },
+    {
+      "file": "boardgame.py",
+      "line": 8,
+      "description": "For each column/cell in each line",
+      "title": "Each line's column"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "Print the cell symbol, with no new line character, for the whole line",
+      "line": 9,
+      "title": "print cell symbol"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "Print just a \"new line\" character after the end of the line, to place next line below",
+      "line": 10,
+      "title": "\"new line\" after board's line end"
+    }
+  ]
+}
