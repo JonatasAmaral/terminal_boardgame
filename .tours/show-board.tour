@@ -1,6 +1,6 @@
 {
   "$schema": "https://aka.ms/codetour-schema",
-  "title": "1 - show board",
+  "title": "show board",
   "steps": [
     {
       "file": "boardgame.py",
@@ -12,58 +12,61 @@
       "file": "boardgame.py",
       "selection": {
         "start": {
+          "line": 8,
+          "character": 2
+        },
+        "end": {
+          "line": 8,
+          "character": 39
+        }
+      },
+      "description": "Inline conditional of print line number or blank space at row start",
+      "title": "line numbers conditionally "
+    },
+    {
+      "file": "boardgame.py",
+      "selection": {
+        "start": {
+          "line": 8,
+          "character": 9
+        },
+        "end": {
+          "line": 8,
+          "character": 16
+        }
+      },
+      "description": "Shows a number on a 2 character space, even whem the number itself is smaller\n\n  `5` -> `_5`\n\n `50` -> `50`\n \n`500` -> `500`\n\n_*'`_`' significando espaço em branco_",
+      "title": "\"%2i\" meaning"
+    },
+    {
+      "file": "boardgame.py",
+      "selection": {
+        "start": {
           "line": 9,
           "character": 2
         },
         "end": {
-          "line": 17,
+          "line": 9,
           "character": 23
         }
       },
-      "description": "If on the line of _\"columns labels\"_, print a blank space on first cell (to make room for lines labeling column), then each column's number in sequence",
-      "title": "1st line: print cols numbers"
-    },
-    {
-      "file": "boardgame.py",
-      "description": "If on one of the lines of the board itself.\n(not on labels line)",
-      "line": 19,
-      "title": "on board lines"
+      "description": "For columns of the board itself",
+      "title": "For columns of board"
     },
     {
       "file": "boardgame.py",
       "selection": {
         "start": {
-          "line": 22,
-          "character": 4
+          "line": 10,
+          "character": 3
         },
         "end": {
-          "line": 24,
-          "character": 22
+          "line": 11,
+          "character": 33
         }
       },
-      "description": "If is on _\"lines labels\"_ column (on each line's first cell) print the line number.",
-      "title": "1st cell: print line number"
-    },
-    {
-      "file": "boardgame.py",
-      "selection": {
-        "start": {
-          "line": 25,
-          "character": 4
-        },
-        "end": {
-          "line": 27,
-          "character": 35
-        }
-      },
-      "description": "If completely inside the board, print the cell's symbol",
-      "title": "inside board: print cell"
-    },
-    {
-      "file": "boardgame.py",
-      "description": "print _\"new line\"_ character only, to put next board line below current one",
-      "line": 29,
-      "title": "move to new line"
+      "description": "On first line print columns numbers\n\nOn other lines, it's cells",
+      "title": "print number or cells"
     }
   ],
   "description": "Describe how the code that print the board to the console works"
