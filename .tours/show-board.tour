@@ -4,27 +4,60 @@
   "steps": [
     {
       "file": "boardgame.py",
-      "line": 7,
-      "description": "For each line of the full board",
-      "title": "Each line"
-    },
-    {
-      "file": "boardgame.py",
       "line": 8,
-      "description": "For each column/cell in each line",
-      "title": "Each line's column"
+      "description": "For each line of the full board",
+      "title": "For each line"
     },
     {
       "file": "boardgame.py",
-      "description": "Print the cell symbol, with no new line character, for the whole line",
+      "description": "On lines that the number is even",
       "line": 9,
-      "title": "print cell symbol"
+      "title": "on even lines"
     },
     {
       "file": "boardgame.py",
-      "description": "Print just a \"new line\" character after the end of the line, to place next line below",
-      "line": 10,
-      "title": "\"new line\" after board's line end"
+      "selection": {
+        "start": {
+          "line": 11,
+          "character": 4
+        },
+        "end": {
+          "line": 12,
+          "character": 36
+        }
+      },
+      "description": "if column number is even, print black cell\n\nif is odd print white cell\n\nthis makes and alternating cell color line",
+      "title": "print b->w->b ..."
+    },
+    {
+      "file": "boardgame.py",
+      "selection": {
+        "start": {
+          "line": 13,
+          "character": 2
+        },
+        "end": {
+          "line": 13,
+          "character": 7
+        }
+      },
+      "description": "If is not a even line, aka, an odd one",
+      "title": "on odd lines"
+    },
+    {
+      "file": "boardgame.py",
+      "selection": {
+        "start": {
+          "line": 15,
+          "character": 4
+        },
+        "end": {
+          "line": 16,
+          "character": 30
+        }
+      },
+      "description": "Does the same alternating cell color trick, but in inverse order. Even column: white cell; Odd col: black cell\n\nThis makes even lines go `black->white->black...`\nAnd odd lines go `white->black->white...`\n\nMaking an alternating pattern also in vertical direction",
+      "title": "flip to w->b->w ..."
     }
   ]
 }
