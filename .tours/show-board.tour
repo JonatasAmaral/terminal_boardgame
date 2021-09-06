@@ -4,60 +4,49 @@
   "steps": [
     {
       "file": "boardgame.py",
-      "line": 8,
-      "description": "For each line of the full board",
-      "title": "For each line"
-    },
-    {
-      "file": "boardgame.py",
-      "description": "On lines that the number is even",
-      "line": 9,
-      "title": "on even lines"
+      "selection": {
+        "start": {
+          "line": 8,
+          "character": 1
+        },
+        "end": {
+          "line": 9,
+          "character": 23
+        }
+      },
+      "description": "for each cell (line/columns)",
+      "title": "For each cell"
     },
     {
       "file": "boardgame.py",
       "selection": {
         "start": {
-          "line": 11,
-          "character": 4
+          "line": 10,
+          "character": 3
         },
         "end": {
-          "line": 12,
-          "character": 36
+          "line": 10,
+          "character": 12
         }
       },
-      "description": "if column number is even, print black cell\n\nif is odd print white cell\n\nthis makes and alternating cell color line",
-      "title": "print b->w->b ..."
+      "description": "Get unique cell's number\n\n1...n\n\n2...2n\n\nn...n²\n\n\nThen check if it's even or odd (it's remainder)\n\n_*For this 'evenness' purpose, a simple sum would be enough. But more of a subtle move_",
+      "title": "gets cell's \"evenness\""
     },
     {
       "file": "boardgame.py",
       "selection": {
         "start": {
           "line": 13,
-          "character": 2
-        },
-        "end": {
-          "line": 13,
-          "character": 7
-        }
-      },
-      "description": "If is not a even line, aka, an odd one",
-      "title": "on odd lines"
-    },
-    {
-      "file": "boardgame.py",
-      "selection": {
-        "start": {
-          "line": 15,
           "character": 4
         },
         "end": {
-          "line": 16,
-          "character": 30
+          "line": 14,
+          "character": 23
         }
       },
-      "description": "Does the same alternating cell color trick, but in inverse order. Even column: white cell; Odd col: black cell\n\nThis makes even lines go `black->white->black...`\nAnd odd lines go `white->black->white...`\n\nMaking an alternating pattern also in vertical direction",
-      "title": "flip to w->b->w ..."
+      "description": "A math/string op trick in python for reduced text conditional:\n\n`cell` is a string, in python, multiplying it by a number can make it repeat: `'-'*3` -> `---`\n\nMultiply it by `0` means \"nothing\": `'text'*0` -> `''`. And by `1`, just it self.\n\n`num` is a remainder of 2, aka, `0` or `1`\n\nIt makes print `cell` for odd, and `''` for even.\nThe inverse is applied for `cell_white`. And those are concatenated togueter.\n\nFinal result: `cell` for odd, `cell_white` for even",
+      "title": "choose color for evenness",
+      "line": 0
     }
   ]
 }
