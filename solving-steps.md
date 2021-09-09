@@ -2,9 +2,9 @@
 
 <br />
 
-➡ make a board
+◻ make a board
 
-◻ place a character in there
+➡ place a character in there
 
 ◻ put an obstacle too
 

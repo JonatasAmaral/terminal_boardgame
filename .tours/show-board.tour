@@ -4,26 +4,48 @@
   "steps": [
     {
       "file": "boardgame.py",
-      "line": 7,
+      "pattern": "for . in range\\(lines\\):",
       "description": "For each line of the full board",
       "title": "Each line"
     },
     {
       "file": "boardgame.py",
-      "line": 8,
+      "pattern": "for . in range\\(cols\\):",
       "description": "For each column/cell in each line",
       "title": "Each line's column"
     },
     {
       "file": "boardgame.py",
-      "description": "Print the cell symbol, with no new line character, for the whole line",
-      "line": 9,
+      "description": "If in desired cell (both in the right column and right row), print the char emoji",
+      "line": 10,
+      "title": "print char on desired cell"
+    },
+    {
+      "file": "boardgame.py",
+      "selection": {
+        "start": {
+          "line": 10,
+          "character": 6
+        },
+        "end": {
+          "line": 10,
+          "character": 23
+        }
+      },
+      "description": "Could be a direcly array comparison:\n\n```py\n[c,l] == [2,4]\n```",
+      "title": "direct array comparison",
+      "line": 4
+    },
+    {
+      "file": "boardgame.py",
+      "description": "Otherwise, print the cell symbol, with no new line character, for the whole line",
+      "line": 11,
       "title": "print cell symbol"
     },
     {
       "file": "boardgame.py",
-      "description": "Print just a \"new line\" character after the end of the line, to place next line below",
-      "line": 10,
+      "description": "otherwise, print just a \"new line\" character after the end of the line, to place next line below",
+      "pattern": "print\\(\\)\\W",
       "title": "\"new line\" after board's line end"
     }
   ]
