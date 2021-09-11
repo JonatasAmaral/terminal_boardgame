@@ -4,26 +4,55 @@
   "steps": [
     {
       "file": "boardgame.py",
-      "line": 7,
+      "selection": {
+        "start": {
+          "line": 6,
+          "character": 1
+        },
+        "end": {
+          "line": 9,
+          "character": 2
+        }
+      },
+      "description": "Character infos in a dict, with image, and it's position as a [x,y] list"
+    },
+    {
+      "file": "boardgame.py",
+      "pattern": "for . in range\\(lines\\):",
       "description": "For each line of the full board",
       "title": "Each line"
     },
     {
       "file": "boardgame.py",
-      "line": 8,
+      "pattern": "for . in range\\(cols\\):",
       "description": "For each column/cell in each line",
       "title": "Each line's column"
     },
     {
       "file": "boardgame.py",
-      "description": "Print the cell symbol, with no new line character, for the whole line",
-      "line": 9,
+      "description": "If in the cell where character is print the character image",
+      "title": "print char on desired cell",
+      "selection": {
+        "start": {
+          "line": 15,
+          "character": 9
+        },
+        "end": {
+          "line": 16,
+          "character": 42
+        }
+      }
+    },
+    {
+      "file": "boardgame.py",
+      "description": "Otherwise, print the cell symbol, with no new line character, for the whole line",
+      "pattern": ".*print\\s*\\(\\s*cell\\s*,",
       "title": "print cell symbol"
     },
     {
       "file": "boardgame.py",
-      "description": "Print just a \"new line\" character after the end of the line, to place next line below",
-      "line": 10,
+      "description": "otherwise, print just a \"new line\" character after the end of the line, to place next line below",
+      "pattern": "^[^\\S\\n]*print\\(\\)\\W",
       "title": "\"new line\" after board's line end"
     }
   ]
