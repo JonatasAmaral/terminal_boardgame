@@ -1,43 +1,7 @@
 {
   "$schema": "https://aka.ms/codetour-schema",
-  "title": "show board",
+  "title": "2 - show board",
   "steps": [
-    {
-      "file": "solving-steps.md",
-      "description": "moving on to add obstacles to the board",
-      "pattern": "^[^\\S\\n]*➡ put an obstacle too",
-      "title": "going to \"add obstacles\" stage"
-    },
-    {
-      "file": "boardgame.py",
-      "selection": {
-        "start": {
-          "line": 6,
-          "character": 1
-        },
-        "end": {
-          "line": 9,
-          "character": 2
-        }
-      },
-      "description": "Character infos in a dict, with image, and it's position as a [x,y] list",
-      "title": "character infos"
-    },
-    {
-      "file": "boardgame.py",
-      "description": "fixed obstacle info's dict",
-      "selection": {
-        "start": {
-          "line": 10,
-          "character": 1
-        },
-        "end": {
-          "line": 13,
-          "character": 2
-        }
-      },
-      "title": "obstacle's dict info"
-    },
     {
       "file": "boardgame.py",
       "pattern": "for . in range\\(lines\\):",
@@ -56,11 +20,11 @@
       "title": "print char on desired cell",
       "selection": {
         "start": {
-          "line": 19,
+          "line": 25,
           "character": 9
         },
         "end": {
-          "line": 20,
+          "line": 26,
           "character": 42
         }
       }
@@ -71,14 +35,29 @@
       "title": "print obstacle",
       "selection": {
         "start": {
-          "line": 21,
+          "line": 27,
           "character": 9
         },
         "end": {
-          "line": 22,
+          "line": 28,
           "character": 46
         }
       }
+    },
+    {
+      "file": "boardgame.py",
+      "selection": {
+        "start": {
+          "line": 29,
+          "character": 9
+        },
+        "end": {
+          "line": 30,
+          "character": 42
+        }
+      },
+      "description": "or, if in poop's location, print it",
+      "title": "or print poop"
     },
     {
       "file": "boardgame.py",

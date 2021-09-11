@@ -6,7 +6,9 @@
 
 ◻ place a character in there
 
-➡ put an obstacle too
+◻ put an obstacle too
+
+➡ the dog must had poop somewhere
 
 ◻ allow player to move the character
 
