@@ -12,7 +12,7 @@ char = {
 for l in range(lines):
     for c in range(cols):
         # place a character in the board
-        if c == char["pos"][0] and l == char["pos"][1]:
+        if [c,l] == char["pos"]:
             print(char["image"], end=" ")
         else:
             print(cell, end=" ")

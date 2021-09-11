@@ -4,6 +4,20 @@
   "steps": [
     {
       "file": "boardgame.py",
+      "selection": {
+        "start": {
+          "line": 6,
+          "character": 1
+        },
+        "end": {
+          "line": 9,
+          "character": 2
+        }
+      },
+      "description": "Character infos in a dict, with image, and it's position as a [x,y] list"
+    },
+    {
+      "file": "boardgame.py",
       "pattern": "for . in range\\(lines\\):",
       "description": "For each line of the full board",
       "title": "Each line"
@@ -16,7 +30,7 @@
     },
     {
       "file": "boardgame.py",
-      "description": "If in the cell where character is (both in the right column and right row), print the char emoji",
+      "description": "If in the cell where character is print the character image",
       "title": "print char on desired cell",
       "selection": {
         "start": {
