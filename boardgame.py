@@ -36,8 +36,8 @@ while True:
 
     if move == "a": char["pos"][0] -= 1
     elif move == "d": char["pos"][0] += 1
-    elif move == "w": char["pos"][1] += 1
-    elif move == "s": char["pos"][1] -= 1
+    elif move == "w": char["pos"][1] -= 1
+    elif move == "s": char["pos"][1] += 1
     else:
         print("Wrong direction")
         sleep(2) # pauses 2 secs
