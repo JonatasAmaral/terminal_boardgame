@@ -42,5 +42,7 @@ while True:
         sleep(2) # pauses 2 secs
 
 
-    # fake _update_ the screen, hiding previous board prints
-    print("\n"*10)
+    # update the screen, "returning carriage" before the last printed board
+    for l in range(lines+3):
+        stdout.write("\033[F") # go to prev line start
+        stdout.write("\033[K") # clear line
