@@ -1,0 +1,36 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "move character",
+  "steps": [
+    {
+      "file": "solving-steps.md",
+      "description": "next step: move the character",
+      "line": 11,
+      "title": "moving character stage"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "### Create a \"game loop\"\n\nIt's a infinite loop, that will update the game status on each iteration, allowing us to make the moves and interactions\n\nSo, all _dynamic_ part's code must be wrapped by this loop.\nThe static definitions and structures should not.",
+      "pattern": "^while\\s*True"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "Gets the user's chosen move",
+      "pattern": "move\\s*=\\s*input\\(",
+      "title": "gets move"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "Applies the user's chosen move if it's a known one",
+      "pattern": "move\\s*==\\s*['\"]\\w['\"]",
+      "title": "applies move"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "Warns the user for an invalid move. and don't perform nothing",
+      "pattern": "(?<=move\\s*==\\s*['\"]\\w['\"].+\\n.*)else",
+      "title": "warns invalid move"
+    }
+  ],
+  "isPrimary": true
+}

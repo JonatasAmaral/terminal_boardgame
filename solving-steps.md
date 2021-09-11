@@ -6,9 +6,9 @@
 
 ◻ place a character in there
 
-➡ put an obstacle too
+◻ put an obstacle too
 
-◻ allow player to move the character
+➡ allow player to move the character
 
 ◻ make an enemy
 
