@@ -20,12 +20,12 @@
       "title": "print char on desired cell",
       "selection": {
         "start": {
-          "line": 13,
-          "character": 3
+          "line": 15,
+          "character": 9
         },
         "end": {
-          "line": 14,
-          "character": 37
+          "line": 16,
+          "character": 42
         }
       }
     },
