@@ -38,4 +38,5 @@ while True:
     else: print("Wrong direction")
 
 
-# more lines
+    # fake _update_ the screen, hiding previous board prints
+    print("\n"*10)
