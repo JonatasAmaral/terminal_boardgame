@@ -1,3 +1,4 @@
+from sys import stdout
 from time import sleep
 
 # definitions
@@ -40,6 +41,7 @@ while True:
     else:
         print("Wrong direction")
         sleep(2) # pauses 2 secs
+        stdout.write("\033[F\033[K") # clear warning
 
 
     # update the screen, "returning carriage" before the last printed board
