@@ -1,3 +1,5 @@
+from time import sleep
+
 # definitions
 cols = 5
 lines = 5
@@ -35,7 +37,9 @@ while True:
     elif move == "d": char["pos"][0] += 1
     elif move == "w": char["pos"][1] += 1
     elif move == "s": char["pos"][1] -= 1
-    else: print("Wrong direction")
+    else:
+        print("Wrong direction")
+        sleep(2) # pauses 2 secs
 
 
     # fake _update_ the screen, hiding previous board prints
