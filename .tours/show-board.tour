@@ -3,6 +3,12 @@
   "title": "show board",
   "steps": [
     {
+      "file": "solving-steps.md",
+      "description": "moving on to add obstacles to the board",
+      "pattern": "^[^\\S\\n]*➡ put an obstacle too",
+      "title": "going to \"add obstacles\" stage"
+    },
+    {
       "file": "boardgame.py",
       "selection": {
         "start": {
@@ -14,7 +20,23 @@
           "character": 2
         }
       },
-      "description": "Character infos in a dict, with image, and it's position as a [x,y] list"
+      "description": "Character infos in a dict, with image, and it's position as a [x,y] list",
+      "title": "character infos"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "fixed obstacle info's dict",
+      "selection": {
+        "start": {
+          "line": 10,
+          "character": 1
+        },
+        "end": {
+          "line": 13,
+          "character": 2
+        }
+      },
+      "title": "obstacle's dict info"
     },
     {
       "file": "boardgame.py",
@@ -34,12 +56,27 @@
       "title": "print char on desired cell",
       "selection": {
         "start": {
-          "line": 15,
+          "line": 19,
           "character": 9
         },
         "end": {
-          "line": 16,
+          "line": 20,
           "character": 42
+        }
+      }
+    },
+    {
+      "file": "boardgame.py",
+      "description": "or, if in the cell where obstacle is print it\n\n> ### note:\n> putting this in an\n> ```py\n> elif\n> ```\n> makes printing the char preferable over the obstacle.\n> \n> so, if both in same location, char is _\"on top\"_, and will be the only one shown.",
+      "title": "print obstacle",
+      "selection": {
+        "start": {
+          "line": 21,
+          "character": 9
+        },
+        "end": {
+          "line": 22,
+          "character": 46
         }
       }
     },
