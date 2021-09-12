@@ -33,15 +33,25 @@ while True:
     
     # asks and waits user to move
     move = input("where to go?\n(a=←, w=↑, d=→, s=↓)\n")
+    new_pos = char["pos"].copy()
 
-    if move == "a" and char["pos"][0]>0: char["pos"][0] -= 1
-    elif move == "d" and char["pos"][0]<cols-1: char["pos"][0] += 1
-    elif move == "w" and char["pos"][1]>0: char["pos"][1] -= 1
-    elif move == "s" and char["pos"][1]<lines-1: char["pos"][1] += 1
+    if move == "a" and char["pos"][0]>0: new_pos[0] -= 1
+    elif move == "d" and char["pos"][0]<cols-1: new_pos[0] += 1
+    elif move == "w" and char["pos"][1]>0: new_pos[1] -= 1
+    elif move == "s" and char["pos"][1]<lines-1: new_pos[1] += 1
     else:
         print("Wrong direction")
         sleep(2) # pauses 2 secs
         stdout.write("\033[F\033[K") # clear warning
+    
+    if new_pos == obstacle["pos"]:
+        print("Can't go over this")
+        sleep(2) # pauses 2 secs
+        stdout.write("\033[F\033[K") # clear warning
+    else:
+        char["pos"] = new_pos
+        del new_pos
+
 
 
     # update the screen, "returning carriage" before the last printed board

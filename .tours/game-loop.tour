@@ -49,15 +49,21 @@
     },
     {
       "file": "boardgame.py",
-      "description": "**update** canvas, removing previous board print:\n\nUses the lowlevel output module **stdout**, to \"take the carriage\" back each line, and clean'en.\n\nSo next print of the board will take the same place",
-      "pattern": "(?<=for.+\n*).*stdout.write",
-      "title": "updates canvas"
+      "description": "Prevent user to move, if it's gonna end on the obstacle",
+      "pattern": "if new_pos\\s*==\\s*obstacle.+['\"]pos['\"]",
+      "title": "Prevent move over obstacle"
     },
     {
       "file": "boardgame.py",
-      "pattern": "(?<=sleep.+\n*).*stdout.write",
-      "description": "Make sure to also remove the extra warning line by stdout carriage manipulation, if it gets triggered",
-      "title": "clean warning line too"
+      "description": "Perform the user's movement",
+      "pattern": "char.+pos.*\\s*=\\s*new_pos",
+      "title": "move"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "**update** canvas, removing previous board print:\n\nUses the lowlevel output module **stdout**, to \"take the carriage\" back each line, and clean'en.\n\nSo next print of the board will take the same place",
+      "pattern": "(?<=for.+\n*).*stdout.write",
+      "title": "updates canvas"
     }
   ],
   "isPrimary": true
