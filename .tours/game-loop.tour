@@ -10,6 +10,18 @@
     },
     {
       "file": "boardgame.py",
+      "description": "Player start at bottom of the board, in the middle on the horizontal axis",
+      "pattern": "(?<=char(.|\\n)+)pos",
+      "title": "char at bottom"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "Obstacle starts in front of the player",
+      "pattern": "(?<=obstacle(.|\\n)+)pos",
+      "title": "obstacle in front"
+    },
+    {
+      "file": "boardgame.py",
       "description": "Food is at any horizontal position, but always on top half of the board (since player starts at bottom)",
       "pattern": "pos.+randrange.+cols",
       "title": "food random distant location"

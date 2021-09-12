@@ -9,11 +9,11 @@ cell = "🔳"  # ⬛
 
 char = {
 	"image": "😀",
-	"pos": [2,4]  # [x,y]
+	"pos": [cols//2,lines-1]  # [x,y]
 }
 obstacle = {
-	"image": "🎸",
-	"pos": [2,3]  # [x,y]
+	"image": choice("🛹🪑🧳⚽🏀🏈💻🎸📺📚📦"),
+	"pos": [cols//2,lines-2]  # [x,y]
 }
 food = {
 	"image": choice("🍕🍖🌭🍦🍰"),
