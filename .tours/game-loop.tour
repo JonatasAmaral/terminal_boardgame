@@ -37,7 +37,7 @@
     },
     {
       "file": "boardgame.py",
-      "description": "Applies the user's chosen move if it's a known one",
+      "description": "Applies the user's chosen move if it's a known and effective/valid one",
       "pattern": "move\\s*==\\s*['\"]\\w['\"]",
       "title": "applies move"
     },
