@@ -57,6 +57,12 @@
     },
     {
       "file": "boardgame.py",
+      "description": "Update character's expression to a \"yummy\" face just after gettin to the food.\n\nMust be on/after perform the move, close to loop end, so next iteration renders updated image.",
+      "pattern": "(?<=if.+char.+pos.+==\\s*food.+pos(.|\\n)+)image.*=",
+      "title": "update face"
+    },
+    {
+      "file": "boardgame.py",
       "description": "**update** canvas, removing previous board print:\n\nUses the lowlevel output module **stdout**, to \"take the carriage\" back each line, and clean'en.\n\nSo next print of the board will take the same place",
       "pattern": "(?<=for.+\n*).*stdout.write",
       "title": "updates canvas"

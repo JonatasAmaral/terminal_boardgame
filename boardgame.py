@@ -64,7 +64,9 @@ while True:
         char["pos"] = new_pos
         del new_pos
 
-
+    # if got to the food, makes a "yummy" face
+    if char["pos"] == food["pos"]:
+        char["image"] = "😋"
 
     # update the screen, "returning carriage" before the last printed board
     for l in range(lines+3):
