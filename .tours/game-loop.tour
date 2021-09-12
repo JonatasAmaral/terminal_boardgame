@@ -4,25 +4,15 @@
   "steps": [
     {
       "file": "solving-steps.md",
-      "description": "next step: move the character",
-      "line": 11,
-      "title": "moving character stage"
+      "description": "next step: get some food",
+      "line": 13,
+      "title": "get food"
     },
     {
       "file": "boardgame.py",
-      "description": "import lowlevel output module sys.stdout",
-      "line": 1,
-      "selection": {
-        "start": {
-          "line": 1,
-          "character": 1
-        },
-        "end": {
-          "line": 1,
-          "character": 23
-        }
-      },
-      "title": "import sys.stdout"
+      "description": "Food is at any horizontal position, but always on top half of the board (since player starts at bottom)",
+      "pattern": "pos.+randrange.+cols",
+      "title": "food random distant location"
     },
     {
       "file": "boardgame.py",

@@ -1,4 +1,5 @@
 from sys import stdout
+from random import choice, randrange
 from time import sleep
 
 # definitions
@@ -14,6 +15,10 @@ obstacle = {
 	"image": "🎸",
 	"pos": [2,3]  # [x,y]
 }
+food = {
+	"image": choice("🍕🍖🌭🍦🍰"),
+	"pos": [randrange(0,cols), randrange(0,lines//2)]  # [x,y]
+}
 
 # game loop
 while True:
@@ -24,6 +29,8 @@ while True:
             # place a character in the board
             if [c,l] == char["pos"]:
                 print(char["image"], end=" ")
+            elif [c,l] == food["pos"]:
+                print(food["image"], end=" ")
             elif [c,l] == obstacle["pos"]:
                 print(obstacle["image"], end=" ")
             else:

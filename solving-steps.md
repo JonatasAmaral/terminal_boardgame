@@ -8,7 +8,9 @@
 
 ◻ put an obstacle too
 
-➡ allow player to move the character
+◻ allow player to move the character
+
+➡ where's that food after all?
 
 ◻ make an enemy
 
