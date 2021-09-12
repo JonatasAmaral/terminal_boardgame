@@ -21,6 +21,12 @@
     },
     {
       "file": "boardgame.py",
+      "description": "## Player Wins!\n\nAfter render (last canvas update), but before asking to move, check if player location is the same as the food.\n\nIf so, print winning message, and close the game by breaking the loop\n\nIf not, loop goes on normally",
+      "pattern": "(?<=if.+char.+pos.+==\\s*food.+pos(.|\\n)+)print",
+      "title": "player win"
+    },
+    {
+      "file": "boardgame.py",
       "description": "Gets the user's chosen move",
       "pattern": "move\\s*=\\s*input\\(",
       "title": "gets move"
