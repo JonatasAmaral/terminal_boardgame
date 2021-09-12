@@ -10,6 +10,22 @@
     },
     {
       "file": "boardgame.py",
+      "description": "import lowlevel output module sys.stdout",
+      "line": 1,
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 1,
+          "character": 23
+        }
+      },
+      "title": "import sys.stdout"
+    },
+    {
+      "file": "boardgame.py",
       "description": "### Create a \"game loop\"\n\nIt's a infinite loop, that will update the game status on each iteration, allowing us to make the moves and interactions\n\nSo, all _dynamic_ part's code must be wrapped by this loop.\nThe static definitions and structures should not.",
       "pattern": "^while\\s*True"
     },
@@ -21,7 +37,7 @@
     },
     {
       "file": "boardgame.py",
-      "description": "Applies the user's chosen move if it's a known one",
+      "description": "Applies the user's chosen move if it's a known and effective/valid one",
       "pattern": "move\\s*==\\s*['\"]\\w['\"]",
       "title": "applies move"
     },
@@ -30,6 +46,18 @@
       "description": "Warns the user for an invalid move. and don't perform nothing",
       "pattern": "(?<=move\\s*==\\s*['\"]\\w['\"].+\\n.*)else",
       "title": "warns invalid move"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "**update** canvas, removing previous board print:\n\nUses the lowlevel output module **stdout**, to \"take the carriage\" back each line, and clean'en.\n\nSo next print of the board will take the same place",
+      "pattern": "(?<=for.+\n*).*stdout.write",
+      "title": "updates canvas"
+    },
+    {
+      "file": "boardgame.py",
+      "pattern": "(?<=sleep.+\n*).*stdout.write",
+      "description": "Make sure to also remove the extra warning line by stdout carriage manipulation, if it gets triggered",
+      "title": "clean warning line too"
     }
   ],
   "isPrimary": true

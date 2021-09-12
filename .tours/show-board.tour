@@ -6,11 +6,11 @@
       "file": "boardgame.py",
       "selection": {
         "start": {
-          "line": 6,
+          "line": 9,
           "character": 1
         },
         "end": {
-          "line": 9,
+          "line": 12,
           "character": 2
         }
       },
@@ -22,11 +22,11 @@
       "description": "fixed obstacle info's dict",
       "selection": {
         "start": {
-          "line": 10,
+          "line": 13,
           "character": 1
         },
         "end": {
-          "line": 13,
+          "line": 16,
           "character": 2
         }
       },
@@ -50,11 +50,11 @@
       "title": "print symbol",
       "selection": {
         "start": {
-          "line": 21,
+          "line": 24,
           "character": 13
         },
         "end": {
-          "line": 27,
+          "line": 30,
           "character": 37
         }
       }

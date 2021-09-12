@@ -1,3 +1,6 @@
+from sys import stdout
+from time import sleep
+
 # definitions
 cols = 5
 lines = 5
@@ -31,11 +34,17 @@ while True:
     # asks and waits user to move
     move = input("where to go?\n(a=←, w=↑, d=→, s=↓)\n")
 
-    if move == "a": char["pos"][0] -= 1
-    elif move == "d": char["pos"][0] += 1
-    elif move == "w": char["pos"][1] += 1
-    elif move == "s": char["pos"][1] -= 1
-    else: print("Wrong direction")
+    if move == "a" and char["pos"][0]>0: char["pos"][0] -= 1
+    elif move == "d" and char["pos"][0]<cols-1: char["pos"][0] += 1
+    elif move == "w" and char["pos"][1]>0: char["pos"][1] -= 1
+    elif move == "s" and char["pos"][1]<lines-1: char["pos"][1] += 1
+    else:
+        print("Wrong direction")
+        sleep(2) # pauses 2 secs
+        stdout.write("\033[F\033[K") # clear warning
 
 
-# more lines
+    # update the screen, "returning carriage" before the last printed board
+    for l in range(lines+3):
+        stdout.write("\033[F") # go to prev line start
+        stdout.write("\033[K") # clear line
