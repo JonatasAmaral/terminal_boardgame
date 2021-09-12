@@ -11,17 +11,7 @@
     {
       "file": "boardgame.py",
       "description": "import lowlevel output module sys.stdout",
-      "line": 1,
-      "selection": {
-        "start": {
-          "line": 1,
-          "character": 1
-        },
-        "end": {
-          "line": 1,
-          "character": 23
-        }
-      },
+      "pattern": "import stdout",
       "title": "import sys.stdout"
     },
     {
@@ -32,19 +22,19 @@
     {
       "file": "boardgame.py",
       "description": "Gets the user's chosen move",
-      "pattern": "move\\s*=\\s*input\\(",
+      "pattern": "move\\s*=\\s*",
       "title": "gets move"
     },
     {
       "file": "boardgame.py",
       "description": "Applies the user's chosen move if it's a known and effective/valid one",
-      "pattern": "move\\s*==\\s*['\"]\\w['\"]",
+      "pattern": "(?<=move\\s*==\\s*.*['\"]\\w['\"].*\n*).*char.*=",
       "title": "applies move"
     },
     {
       "file": "boardgame.py",
       "description": "Warns the user for an invalid move. and don't perform nothing",
-      "pattern": "(?<=move\\s*==\\s*['\"]\\w['\"].+\\n.*)else",
+      "pattern": "(?<=move\\s*==.*\n.*char.*=.*\n*).*else",
       "title": "warns invalid move"
     },
     {

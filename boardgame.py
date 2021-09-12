@@ -1,3 +1,4 @@
+from pynput import keyboard
 from sys import stdout
 from time import sleep
 
@@ -32,12 +33,20 @@ while True:
     
     
     # asks and waits user to move
-    move = input("where to go?\n(a=←, w=↑, d=→, s=↓)\n")
+    with keyboard.Events() as events:
+        event = events.get(1e6)
+        move = event.key
+        sleep(.2)
 
-    if move == "a" and char["pos"][0]>0: char["pos"][0] -= 1
-    elif move == "d" and char["pos"][0]<cols-1: char["pos"][0] += 1
-    elif move == "w" and char["pos"][1]>0: char["pos"][1] -= 1
-    elif move == "s" and char["pos"][1]<lines-1: char["pos"][1] += 1
+
+    if move == keyboard.KeyCode.from_char("a") and char["pos"][0]>0:
+        char["pos"][0] -= 1
+    elif move == keyboard.KeyCode.from_char("d") and char["pos"][0]<cols-1:
+        char["pos"][0] += 1
+    elif move == keyboard.KeyCode.from_char("w") and char["pos"][1]>0:
+        char["pos"][1] -= 1
+    elif move == keyboard.KeyCode.from_char("s") and char["pos"][1]<lines-1:
+        char["pos"][1] += 1
     else:
         print("Wrong direction")
         sleep(2) # pauses 2 secs
