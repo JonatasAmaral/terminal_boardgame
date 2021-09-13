@@ -10,6 +10,18 @@
     },
     {
       "file": "boardgame.py",
+      "description": "Create a new status attribute to in-game usage and manipulation",
+      "pattern": "(?<=char(.|\\n)+)status",
+      "title": "new status attr"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "Create a image set for the character instead of a fixed one\n\nWill dynamic change the active based on char new \"status\" attribute",
+      "pattern": "(?<=char(.|\\n)+)images",
+      "title": "char's new multi images"
+    },
+    {
+      "file": "boardgame.py",
       "description": "### Create a \"game loop\"\n\nIt's a infinite loop, that will update the game status on each iteration, allowing us to make the moves and interactions\n\nSo, all _dynamic_ part's code must be wrapped by this loop.\nThe static definitions and structures should not.",
       "pattern": "^while\\s*True"
     },
@@ -21,8 +33,8 @@
     },
     {
       "file": "boardgame.py",
-      "description": "## Player Wins!\n\n_note that checking wining only **after**(and if not) dead_\n\nAfter render and not beeing dead, but before asking to move, check if player location is the same as the food.\n\nIf so, print winning message, and close the game.\n\nIf not, keeps looping",
-      "pattern": "(?<=if.+char.+pos.+==\\s*food.+pos(.|\\n)+)print",
+      "description": "## Player Wins!\n\nAfter render (last canvas update), but before asking to move, check player status for winning.\n\nIf so, print winning message, and close the game by breaking the loop\n\nIf not, loop goes on normally",
+      "pattern": "(?<=if.+char.+status.+==.+won(.|\\n)+)print",
       "title": "player win"
     },
     {
@@ -36,6 +48,12 @@
       "description": "Perform the user's movement",
       "pattern": "char.+pos.*\\s*=\\s*new_pos",
       "title": "move"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "Update character's status to \"won\", just after gettin to the food.\n\nMust be on/after perform the move, close to loop end, so next iteration renders updated image.",
+      "pattern": "(?<=if.+char.+pos.+==\\s*food.+pos(.|\\n)+)status.*=",
+      "title": "update status"
     },
     {
       "file": "boardgame.py",

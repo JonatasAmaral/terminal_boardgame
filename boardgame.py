@@ -8,7 +8,11 @@ lines = 5
 cell = "🔳"  # ⬛
 
 char = {
-	"image": "😀",
+	"images": {
+        "normal": "😀",
+        "won": "😋"
+    },
+    "status": "normal",
 	"pos": [2,4]  # [x,y]
 }
 obstacle = {
@@ -32,7 +36,13 @@ while True:
         for c in range(cols):
             # place a character in the board
             if [c,l] == char["pos"]:
-                print(char["image"], end=" ")
+
+                print(
+                    char["images"][
+                        char["status"]
+                    ]
+                , end=" ")
+
             elif [c,l] == enemy["pos"]:
                 print(enemy["image"], end=" ")
             elif [c,l] == food["pos"]:
@@ -49,7 +59,7 @@ while True:
         sleep(1) # pauses 2 secs
         break
     # if user won, close game loop
-    if char["pos"] == food["pos"]:
+    if char["status"] == "won":
         print("You got it!!")
         sleep(1) # pauses 2 secs
         break
@@ -75,7 +85,8 @@ while True:
         char["pos"] = new_pos
         del new_pos
 
-
+    # if got to the food, update status to "won"
+    if char["pos"] == food["pos"]: char["status"] = "won"
 
     # update the screen, "returning carriage" before the last printed board
     for l in range(lines+3):
