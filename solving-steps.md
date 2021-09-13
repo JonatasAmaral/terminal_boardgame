@@ -10,8 +10,8 @@
 
 ◻ allow player to move the character
 
-➡ where's that food after all?
+◻ where's that food after all?
 
-◻ make an enemy
+➡ make an enemy
 
 ◻ get that villain moving

@@ -4,9 +4,9 @@
   "steps": [
     {
       "file": "solving-steps.md",
-      "description": "next step: get some food",
-      "line": 13,
-      "title": "get food"
+      "description": "next step: make to this game an enemy",
+      "line": 15,
+      "title": "there's something around here..."
     },
     {
       "file": "boardgame.py",
@@ -22,14 +22,14 @@
     },
     {
       "file": "boardgame.py",
-      "description": "Food is at any horizontal position, but always on top half of the board (since player starts at bottom)",
-      "pattern": "pos.+randrange.+cols",
-      "title": "food random distant location"
+      "description": "### Create a \"game loop\"\n\nIt's a infinite loop, that will update the game status on each iteration, allowing us to make the moves and interactions\n\nSo, all _dynamic_ part's code must be wrapped by this loop.\nThe static definitions and structures should not.",
+      "pattern": "^while\\s*True"
     },
     {
       "file": "boardgame.py",
-      "description": "### Create a \"game loop\"\n\nIt's a infinite loop, that will update the game status on each iteration, allowing us to make the moves and interactions\n\nSo, all _dynamic_ part's code must be wrapped by this loop.\nThe static definitions and structures should not.",
-      "pattern": "^while\\s*True"
+      "description": "### Player Dies!\n\nAfter render (last canvas update), but before asking to move, check if player location is the same as the enemy.\n\nIf so, print that his/her is dead, and close the game by breaking the loop\n\nIf not, loop goes on normally",
+      "pattern": "(?<=if.+char.+pos.+==\\s*enemy.+pos(.|\\n)+)print",
+      "title": "player dies"
     },
     {
       "file": "boardgame.py",
@@ -45,24 +45,6 @@
     },
     {
       "file": "boardgame.py",
-      "description": "Applies the user's chosen move if it's a known and effective/valid one",
-      "pattern": "move\\s*==\\s*['\"]\\w['\"]",
-      "title": "applies move"
-    },
-    {
-      "file": "boardgame.py",
-      "description": "Warns the user for an invalid move. and don't perform nothing",
-      "pattern": "(?<=move\\s*==\\s*['\"]\\w['\"].+\\n.*)else",
-      "title": "warns invalid move"
-    },
-    {
-      "file": "boardgame.py",
-      "description": "Prevent user to move, if it's gonna end on the obstacle",
-      "pattern": "if new_pos\\s*==\\s*obstacle.+['\"]pos['\"]",
-      "title": "Prevent move over obstacle"
-    },
-    {
-      "file": "boardgame.py",
       "description": "Perform the user's movement",
       "pattern": "char.+pos.*\\s*=\\s*new_pos",
       "title": "move"
@@ -71,7 +53,7 @@
       "file": "boardgame.py",
       "description": "Update character's status to \"won\", just after gettin to the food.\n\nMust be on/after perform the move, close to loop end, so next iteration renders updated image.",
       "pattern": "(?<=if.+char.+pos.+==\\s*food.+pos(.|\\n)+)status.*=",
-      "title": "update face"
+      "title": "update status"
     },
     {
       "file": "boardgame.py",
