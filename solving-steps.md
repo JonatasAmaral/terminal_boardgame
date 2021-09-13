@@ -8,12 +8,12 @@
 
 ✔ put an obstacle too
 
-➡ the dog must had poop somewhere
+✔ the dog must had poop somewhere
 
 ✔ allow player to move the character
 
 ✔ where's that food after all?
 
-➡ make an enemy
+✔ make an enemy
 
-◻ get that villain moving
+➡ get that villain moving

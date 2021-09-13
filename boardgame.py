@@ -34,8 +34,16 @@ enemy = {
     "pos": [randrange(0,cols),randrange(0,lines)]
 }
 
+first_iteration = True
 # game loop
 while True:
+
+    if not first_iteration:
+        # update the screen, "returning carriage" before the last printed board
+        for l in range(lines+3):
+            stdout.write("\033[F") # go to prev line start
+            stdout.write("\033[K") # clear line
+    else: first_iteration = False
 
     # print out the board
     for l in range(lines):
@@ -77,7 +85,7 @@ while True:
         print("You got it!!")
         sleep(1) # pauses 2 secs
         break
-    
+
     # asks and waits user to move
     move = input("where to go?\n(a=←, w=↑, d=→, s=↓)\n")
     new_pos = char["pos"].copy()
@@ -90,10 +98,18 @@ while True:
         print("Wrong direction")
         sleep(2) # pauses 2 secs
         stdout.write("\033[F\033[K") # clear warning
+        continue # jumps the iteration, so world keeps paused
+
+    # moves the enemy
+    enemy_move = choice("wasd")
+    if enemy_move == "a" and enemy["pos"][0]>0: enemy["pos"][0] -= 1
+    elif enemy_move == "d" and enemy["pos"][0]<cols-1: enemy["pos"][0] += 1
+    elif enemy_move == "w" and enemy["pos"][1]>0: enemy["pos"][1] -= 1
+    elif enemy_move == "s" and enemy["pos"][1]<lines-1: enemy["pos"][1] += 1
     
     if new_pos == obstacle["pos"]:
         print("Can't go over this")
-        sleep(2) # pauses 2 secs
+        sleep(.5) # pauses 2 secs
         stdout.write("\033[F\033[K") # clear warning
     else:
         char["pos"] = new_pos
@@ -103,8 +119,3 @@ while True:
     if char["pos"] == enemy["pos"]: char["status"] = "dead"
     elif char["pos"] == poop["pos"]: char["status"] = "vomit"
     elif char["pos"] == food["pos"]: char["status"] = "won"
-
-    # update the screen, "returning carriage" before the last printed board
-    for l in range(lines+3):
-        stdout.write("\033[F") # go to prev line start
-        stdout.write("\033[K") # clear line
