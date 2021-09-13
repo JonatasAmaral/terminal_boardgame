@@ -1,5 +1,5 @@
 from sys import stdout
-from random import choice, randrange
+from random import choice, randrange, choices
 from time import sleep
 
 # definitions
@@ -101,7 +101,16 @@ while True:
         continue # jumps the iteration, so world keeps paused
 
     # moves the enemy
-    enemy_move = choice("wasd")
+    enemy_move = choices(
+		"adws",
+		[
+			enemy["pos"][0] > char["pos"][0],
+			enemy["pos"][0] < char["pos"][0],
+			enemy["pos"][1] > char["pos"][1],
+			enemy["pos"][1] < char["pos"][1],
+		]
+	)[0]
+
     if enemy_move == "a" and enemy["pos"][0]>0: enemy["pos"][0] -= 1
     elif enemy_move == "d" and enemy["pos"][0]<cols-1: enemy["pos"][0] += 1
     elif enemy_move == "w" and enemy["pos"][1]>0: enemy["pos"][1] -= 1

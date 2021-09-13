@@ -70,6 +70,12 @@
     },
     {
       "file": "boardgame.py",
+      "description": "## Enemy movement \"inteligence\":\n\nEnemy will only move in the direction of the player\n\nIf it is \"above\", will go down\nIf is on left, will go right\nAnd vice-versa\n\nIf it is gonna move on vertical or horizontal axis, is an equal chance random event, respecting that will ways go closer the player\n\n\n### the calculation\n**choices** method choose an option with weights defined by a list.\n\nThe given weight list here, calculates the char and enemy locations diference, in a way that it results 1 in direction that takes it closer, and 0 on opposite",
+      "pattern": "enemy.+pos.+>",
+      "title": "moving calculation"
+    },
+    {
+      "file": "boardgame.py",
       "description": "Update character's status to \"died\" or \"won\" accordingly\n\nMust be on/after perform the move, close to loop end, so next iteration renders updated image.",
       "pattern": "(?<=if.+char.+pos.+==\\s*.+pos(.|\\n)+)status.*=",
       "title": "update status"
