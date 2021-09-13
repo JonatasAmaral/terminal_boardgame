@@ -4,67 +4,31 @@
   "steps": [
     {
       "file": "boardgame.py",
-      "line": 7,
+      "pattern": "for l in range\\s*\\(-1",
       "description": "For each line of the full board, plus a _\"columns labeling\"_ one on top",
       "title": "For each line"
     },
     {
       "file": "boardgame.py",
-      "selection": {
-        "start": {
-          "line": 8,
-          "character": 2
-        },
-        "end": {
-          "line": 8,
-          "character": 39
-        }
-      },
+      "pattern": "(?<=for l in range\\s*\\(-1(.|\n)+)print.+%2i",
       "description": "Inline conditional of print line number or blank space at row start",
       "title": "line numbers conditionally "
     },
     {
       "file": "boardgame.py",
-      "selection": {
-        "start": {
-          "line": 8,
-          "character": 9
-        },
-        "end": {
-          "line": 8,
-          "character": 16
-        }
-      },
-      "description": "Shows a number on a 2 character space, even whem the number itself is smaller\n\n  `5` -> `_5`\n\n `50` -> `50`\n \n`500` -> `500`\n\n_*'`_`' significando espaço em branco_",
+      "pattern": "%2i",
+      "description": "```python\n%2i\n```\n\nShows a number on a 2 character space, even whem the number itself is smaller\n\n  `5` -> `_5`\n\n `50` -> `50`\n \n`500` -> `500`\n\n_*'`_`' significando espaço em branco_",
       "title": "\"%2i\" meaning"
     },
     {
       "file": "boardgame.py",
-      "selection": {
-        "start": {
-          "line": 9,
-          "character": 2
-        },
-        "end": {
-          "line": 9,
-          "character": 23
-        }
-      },
+      "pattern": "for c in range\\s*\\(",
       "description": "For columns of the board itself",
       "title": "For columns of board"
     },
     {
       "file": "boardgame.py",
-      "selection": {
-        "start": {
-          "line": 10,
-          "character": 3
-        },
-        "end": {
-          "line": 11,
-          "character": 33
-        }
-      },
+      "pattern": "(?<=for c in range(.|\n)+)print.+%2i",
       "description": "On first line print columns numbers\n\nOn other lines, it's cells",
       "title": "print number or cells"
     }

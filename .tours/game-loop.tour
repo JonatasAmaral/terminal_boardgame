@@ -1,0 +1,43 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "move character",
+  "steps": [
+    {
+      "file": "solving-steps.md",
+      "description": "next step: move that monster",
+      "line": 17,
+      "title": "move the enemy too"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "Create a image set for the character instead of a fixed one\n\nWill dynamic change the active based on char new \"status\" attribute",
+      "pattern": "(?<=char(.|\\n)+)images",
+      "title": "char's new multi images"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "## Player Wins!\n\n_note that checking wining only **after**(and if not) dead_\n\nAfter render and not beeing dead, but before asking to move, check if player location is the same as the food.\n\nIf so, print winning message, and close the game.\n\nIf not, keeps looping",
+      "pattern": "(?<=if.+char.+pos.+==\\s*food.+pos(.|\\n)+)print",
+      "title": "player win"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "If user tries a wrong move, skip this iteration, so world's time stays frozen",
+      "pattern": "^.*continue",
+      "title": "skip iteration"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "Makes enemy to one of the moves at random",
+      "pattern": "enemy_move\\s*=",
+      "title": "move enemy"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "**update** canvas, removing previous board print:\n\n_Moved to loop start_\n\nIf not firts iteration, uses the lowlevel output module **stdout**, to \"take the carriage\" back each line, and clean'en.\n\nSo next print of the board will take the same place",
+      "pattern": "(?<=for.+\n*).*stdout.write",
+      "title": "updates canvas"
+    }
+  ],
+  "isPrimary": true
+}

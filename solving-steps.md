@@ -2,7 +2,7 @@
 
 <br />
 
-➡ make a board
+◻ make a board
 
 ◻ place a character in there
 
@@ -10,6 +10,8 @@
 
 ◻ allow player to move the character
 
+◻ where's that food after all?
+
 ◻ make an enemy
 
-◻ get that villain moving
+➡ get that villain moving
