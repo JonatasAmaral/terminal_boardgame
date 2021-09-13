@@ -10,6 +10,24 @@
     },
     {
       "file": "boardgame.py",
+      "description": "Create a new status attribute to in-game usage and manipulation",
+      "pattern": "(?<=char(.|\\n)+)status",
+      "title": "new status attr"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "Create a image set for the character instead of a fixed one\n\nWill dynamic change the active based on char new \"status\" attribute",
+      "pattern": "(?<=char(.|\\n)+)images",
+      "title": "char's new multi images"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "Food is at any horizontal position, but always on top half of the board (since player starts at bottom)",
+      "pattern": "pos.+randrange.+cols",
+      "title": "food random distant location"
+    },
+    {
+      "file": "boardgame.py",
       "description": "### Create a \"game loop\"\n\nIt's a infinite loop, that will update the game status on each iteration, allowing us to make the moves and interactions\n\nSo, all _dynamic_ part's code must be wrapped by this loop.\nThe static definitions and structures should not.",
       "pattern": "^while\\s*True"
     },
@@ -36,6 +54,12 @@
       "description": "Perform the user's movement",
       "pattern": "char.+pos.*\\s*=\\s*new_pos",
       "title": "move"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "Update character's status to \"died\", on touching the enemy.\n\nMust be on/after perform the move, close to loop end, so next iteration renders updated image.",
+      "pattern": "(?<=if.+char.+pos.+==\\s*enemy.+pos(.|\\n)+)status.*=",
+      "title": "you're gone now"
     },
     {
       "file": "boardgame.py",
