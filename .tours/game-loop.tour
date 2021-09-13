@@ -4,15 +4,9 @@
   "steps": [
     {
       "file": "solving-steps.md",
-      "description": "next step: get some food",
-      "line": 13,
-      "title": "get food"
-    },
-    {
-      "file": "boardgame.py",
-      "description": "Food is at any horizontal position, but always on top half of the board (since player starts at bottom)",
-      "pattern": "pos.+randrange.+cols",
-      "title": "food random distant location"
+      "description": "next step: make to this game an enemy",
+      "line": 15,
+      "title": "there's something around here..."
     },
     {
       "file": "boardgame.py",
@@ -30,24 +24,6 @@
       "description": "Gets the user's chosen move",
       "pattern": "move\\s*=\\s*input\\(",
       "title": "gets move"
-    },
-    {
-      "file": "boardgame.py",
-      "description": "Applies the user's chosen move if it's a known and effective/valid one",
-      "pattern": "move\\s*==\\s*['\"]\\w['\"]",
-      "title": "applies move"
-    },
-    {
-      "file": "boardgame.py",
-      "description": "Warns the user for an invalid move. and don't perform nothing",
-      "pattern": "(?<=move\\s*==\\s*['\"]\\w['\"].+\\n.*)else",
-      "title": "warns invalid move"
-    },
-    {
-      "file": "boardgame.py",
-      "description": "Prevent user to move, if it's gonna end on the obstacle",
-      "pattern": "if new_pos\\s*==\\s*obstacle.+['\"]pos['\"]",
-      "title": "Prevent move over obstacle"
     },
     {
       "file": "boardgame.py",

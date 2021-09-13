@@ -19,6 +19,10 @@ food = {
 	"image": choice("🍕🍖🌭🍦🍰"),
 	"pos": [randrange(0,cols), randrange(0,lines//2)]  # [x,y]
 }
+enemy = {
+    "image": '👻',
+    "pos": [randrange(0,cols),randrange(0,lines)]
+}
 
 # game loop
 while True:
@@ -29,6 +33,8 @@ while True:
             # place a character in the board
             if [c,l] == char["pos"]:
                 print(char["image"], end=" ")
+            elif [c,l] == enemy["pos"]:
+                print(enemy["image"], end=" ")
             elif [c,l] == food["pos"]:
                 print(food["image"], end=" ")
             elif [c,l] == obstacle["pos"]:
