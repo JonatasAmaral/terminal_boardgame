@@ -22,6 +22,24 @@
     },
     {
       "file": "boardgame.py",
+      "description": "Player start at bottom of the board, in the middle on the horizontal axis",
+      "pattern": "(?<=char(.|\\n)+)pos",
+      "title": "char at bottom"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "Obstacle starts in front of the player",
+      "pattern": "(?<=obstacle(.|\\n)+)pos",
+      "title": "obstacle in front"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "Food is at any horizontal position, but always on top half of the board (since player starts at bottom)",
+      "pattern": "pos.+randrange.+cols",
+      "title": "food random distant location"
+    },
+    {
+      "file": "boardgame.py",
       "description": "### Create a \"game loop\"\n\nIt's a infinite loop, that will update the game status on each iteration, allowing us to make the moves and interactions\n\nSo, all _dynamic_ part's code must be wrapped by this loop.\nThe static definitions and structures should not.",
       "pattern": "^while\\s*True"
     },
