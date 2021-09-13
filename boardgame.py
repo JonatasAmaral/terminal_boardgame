@@ -24,6 +24,10 @@ food = {
 	"image": choice("🍕🍖🌭🍦🍰"),
 	"pos": [randrange(0,cols), randrange(0,lines//2)]  # [x,y]
 }
+poop = {
+	"image": "💩",
+	"pos": [randrange(0,cols),randrange(0,lines)]  # random [x,y]
+}
 enemy = {
     "image": '👻',
     "pos": [randrange(0,cols),randrange(0,lines)]
@@ -46,6 +50,8 @@ while True:
 
             elif [c,l] == enemy["pos"]:
                 print(enemy["image"], end=" ")
+            elif [c,l] == poop["pos"]:
+                print(poop["image"], end=" ")
             elif [c,l] == food["pos"]:
                 print(food["image"], end=" ")
             elif [c,l] == obstacle["pos"]:

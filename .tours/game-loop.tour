@@ -4,21 +4,21 @@
   "steps": [
     {
       "file": "solving-steps.md",
-      "description": "next step: make to this game an enemy",
-      "line": 15,
+      "description": "back some steps: add the poop",
+      "line": 11,
       "title": "there's something around here..."
     },
     {
       "file": "boardgame.py",
-      "description": "Create a new status attribute to in-game usage and manipulation",
+      "description": "Status attribute to in-game usage and manipulation",
       "pattern": "(?<=char(.|\\n)+)status",
-      "title": "new status attr"
+      "title": "status attr"
     },
     {
       "file": "boardgame.py",
-      "description": "Create a image set for the character instead of a fixed one\n\nWill dynamic change the active based on char new \"status\" attribute",
+      "description": "Iimage set for the character\n\nDynamic change the active based on char's status",
       "pattern": "(?<=char(.|\\n)+)images",
-      "title": "char's new multi images"
+      "title": "char's images set"
     },
     {
       "file": "boardgame.py",
@@ -35,13 +35,20 @@
     {
       "file": "boardgame.py",
       "description": "Food is at any horizontal position, but always on top half of the board (since player starts at bottom)",
-      "pattern": "pos.+randrange.+cols",
+      "pattern": "(?<=food(.|\\n)+)pos",
       "title": "food random distant location"
     },
     {
       "file": "boardgame.py",
-      "description": "### Create a \"game loop\"\n\nIt's a infinite loop, that will update the game status on each iteration, allowing us to make the moves and interactions\n\nSo, all _dynamic_ part's code must be wrapped by this loop.\nThe static definitions and structures should not.",
-      "pattern": "^while\\s*True"
+      "description": "Dogs poop on random places",
+      "pattern": "(?<=poop(.|\\n)+)pos",
+      "title": "poop on random"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "This enemy can go anywhere. It's a **ghost**!",
+      "pattern": "(?<=enemy(.|\\n)+)pos",
+      "title": "enemy anywhere"
     },
     {
       "file": "boardgame.py",
@@ -54,12 +61,6 @@
       "description": "## Player Wins!\n\nAfter render (last canvas update), but before asking to move, check player status for winning.\n\nIf so, print winning message, and close the game by breaking the loop\n\nIf not, loop goes on normally",
       "pattern": "(?<=if.+char.+status.+==.+won(.|\\n)+)print",
       "title": "player win"
-    },
-    {
-      "file": "boardgame.py",
-      "description": "Gets the user's chosen move",
-      "pattern": "move\\s*=\\s*input\\(",
-      "title": "gets move"
     },
     {
       "file": "boardgame.py",
