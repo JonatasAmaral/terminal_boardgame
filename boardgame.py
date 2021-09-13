@@ -43,6 +43,11 @@ while True:
                 print(cell, end=" ")
         print()
     
+    # if user gets to the enemy, dies
+    if char["pos"] == enemy["pos"]:
+        print("I think you may have died!")
+        sleep(1) # pauses 2 secs
+        break
     # if user won, close game loop
     if char["pos"] == food["pos"]:
         print("You got it!!")

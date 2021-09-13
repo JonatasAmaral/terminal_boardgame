@@ -15,7 +15,13 @@
     },
     {
       "file": "boardgame.py",
-      "description": "## Player Wins!\n\nAfter render (last canvas update), but before asking to move, check if player location is the same as the food.\n\nIf so, print winning message, and close the game by breaking the loop\n\nIf not, loop goes on normally",
+      "description": "### Player Dies!\n\nAfter render (last canvas update), but before asking to move, check if player location is the same as the enemy.\n\nIf so, print that his/her is dead, and close the game by breaking the loop\n\nIf not, loop goes on normally",
+      "pattern": "(?<=if.+char.+pos.+==\\s*enemy.+pos(.|\\n)+)print",
+      "title": "player dies"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "## Player Wins!\n\n_note that checking wining only **after**(and if not) dead_\n\nAfter render and not beeing dead, but before asking to move, check if player location is the same as the food.\n\nIf so, print winning message, and close the game.\n\nIf not, keeps looping",
       "pattern": "(?<=if.+char.+pos.+==\\s*food.+pos(.|\\n)+)print",
       "title": "player win"
     },
