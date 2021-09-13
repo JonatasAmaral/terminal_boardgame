@@ -1,6 +1,6 @@
 # Python terminal micro boardgame 👨‍💻🎮
 
-<div style="text-align:center;"><img src="https://imgur.com/pPAfaGj.png" alt="Game preview" style="width:100%; max-width:320px;"/></div>
+<div style="text-align:center;"><img src="https://imgur.com/zrJx6k3.gif" alt="Game preview" style="width:100%; max-width:320px;"/></div>
 
 <br />
 
@@ -23,7 +23,7 @@ It's funnier if a project has purpose, meaning and a history backing it up, so h
 
 <em>
 
-You woke up, it's `3a.m.`, and the hungry comes pay you a visit.
+You woke up, it's **3a.m.**, and hungry comes pay you a visit.
 
 You gotta go have a snack, but for sure your dog did poop somewhere. Better not step on it, and lose your appetite.
 
@@ -43,6 +43,8 @@ It may have something spooking around... Should be carefull on the way.
 
 👣 You can only move one step by turn, on vertical **or** horizontal axis. No weird diagonals for you here you fool
 
+📚 You _can't_ go over your obstacles here. Feels motivating?
+
 💩 Poop is a stationary obstacle. You should avoid it, but it wouldn't do much to get you.
 
 👻 Ghost in other hand, is mostly going after any yellow faceball, though may get distracted sometimes.
@@ -56,6 +58,8 @@ It may have something spooking around... Should be carefull on the way.
 😀 - this is you
 
 🌭 - you gotta get the food
+
+📚 - thinks you drop anywhere
 
 💩 - your dog's little gift
 
