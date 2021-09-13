@@ -28,7 +28,7 @@
     {
       "file": "boardgame.py",
       "description": "### Player Dies!\n\nAfter render (last canvas update), but before asking to move, check if player location is the same as the enemy.\n\nIf so, print that his/her is dead, and close the game by breaking the loop\n\nIf not, loop goes on normally",
-      "pattern": "(?<=if.+char.+pos.+==\\s*enemy.+pos(.|\\n)+)print",
+      "pattern": "(?<=if.+char.+status.+==.+dead(.|\\n)+)print",
       "title": "player dies"
     },
     {
@@ -51,8 +51,8 @@
     },
     {
       "file": "boardgame.py",
-      "description": "Update character's status to \"won\", just after gettin to the food.\n\nMust be on/after perform the move, close to loop end, so next iteration renders updated image.",
-      "pattern": "(?<=if.+char.+pos.+==\\s*food.+pos(.|\\n)+)status.*=",
+      "description": "Update character's status to \"died\" or \"won\" accordingly, on touching the enemy.\n\nMust be on/after perform the move, close to loop end, so next iteration renders updated image.",
+      "pattern": "(?<=if.+char.+pos.+==\\s*.+pos(.|\\n)+)status.*=",
       "title": "update status"
     },
     {
