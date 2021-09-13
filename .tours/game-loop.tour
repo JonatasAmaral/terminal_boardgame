@@ -21,8 +21,8 @@
     },
     {
       "file": "boardgame.py",
-      "description": "## Player Wins!\n\nAfter render (last canvas update), but before asking to move, check if player location is the same as the food.\n\nIf so, print winning message, and close the game by breaking the loop\n\nIf not, loop goes on normally",
-      "pattern": "(?<=if.+char.+pos.+==\\s*food.+pos(.|\\n)+)print",
+      "description": "## Player Wins!\n\nAfter render (last canvas update), but before asking to move, check player status for winning.\n\nIf so, print winning message, and close the game by breaking the loop\n\nIf not, loop goes on normally",
+      "pattern": "(?<=if.+char.+status.+==.+won(.|\\n)+)print",
       "title": "player win"
     },
     {
@@ -57,7 +57,7 @@
     },
     {
       "file": "boardgame.py",
-      "description": "Update character's expression to a \"yummy\" face just after gettin to the food.\n\nMust be on/after perform the move, close to loop end, so next iteration renders updated image.",
+      "description": "Update character's expression to a \"yummy\" face, and status to \"won\", just after gettin to the food.\n\nMust be on/after perform the move, close to loop end, so next iteration renders updated image.",
       "pattern": "(?<=if.+char.+pos.+==\\s*food.+pos(.|\\n)+)image.*=",
       "title": "update face"
     },
