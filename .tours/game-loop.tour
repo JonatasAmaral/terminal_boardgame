@@ -4,15 +4,9 @@
   "steps": [
     {
       "file": "solving-steps.md",
-      "description": "next step: make to this game an enemy",
-      "line": 15,
-      "title": "there's something around here..."
-    },
-    {
-      "file": "boardgame.py",
-      "description": "Create a new status attribute to in-game usage and manipulation",
-      "pattern": "(?<=char(.|\\n)+)status",
-      "title": "new status attr"
+      "description": "next step: move that monster",
+      "line": 17,
+      "title": "move the enemy too"
     },
     {
       "file": "boardgame.py",
@@ -22,48 +16,25 @@
     },
     {
       "file": "boardgame.py",
-      "description": "Food is at any horizontal position, but always on top half of the board (since player starts at bottom)",
-      "pattern": "pos.+randrange.+cols",
-      "title": "food random distant location"
-    },
-    {
-      "file": "boardgame.py",
-      "description": "### Create a \"game loop\"\n\nIt's a infinite loop, that will update the game status on each iteration, allowing us to make the moves and interactions\n\nSo, all _dynamic_ part's code must be wrapped by this loop.\nThe static definitions and structures should not.",
-      "pattern": "^while\\s*True"
-    },
-    {
-      "file": "boardgame.py",
-      "description": "### Player Dies!\n\nAfter render (last canvas update), but before asking to move, check if player location is the same as the enemy.\n\nIf so, print that his/her is dead, and close the game by breaking the loop\n\nIf not, loop goes on normally",
-      "pattern": "(?<=if.+char.+pos.+==\\s*enemy.+pos(.|\\n)+)print",
-      "title": "player dies"
-    },
-    {
-      "file": "boardgame.py",
       "description": "## Player Wins!\n\n_note that checking wining only **after**(and if not) dead_\n\nAfter render and not beeing dead, but before asking to move, check if player location is the same as the food.\n\nIf so, print winning message, and close the game.\n\nIf not, keeps looping",
       "pattern": "(?<=if.+char.+pos.+==\\s*food.+pos(.|\\n)+)print",
       "title": "player win"
     },
     {
       "file": "boardgame.py",
-      "description": "Gets the user's chosen move",
-      "pattern": "move\\s*=\\s*input\\(",
-      "title": "gets move"
+      "description": "If user tries a wrong move, skip this iteration, so world's time stays frozen",
+      "pattern": "^.*continue",
+      "title": "skip iteration"
     },
     {
       "file": "boardgame.py",
-      "description": "Perform the user's movement",
-      "pattern": "char.+pos.*\\s*=\\s*new_pos",
-      "title": "move"
+      "description": "Makes enemy to one of the moves at random",
+      "pattern": "enemy_move\\s*=",
+      "title": "move enemy"
     },
     {
       "file": "boardgame.py",
-      "description": "Update character's status to \"died\", on touching the enemy.\n\nMust be on/after perform the move, close to loop end, so next iteration renders updated image.",
-      "pattern": "(?<=if.+char.+pos.+==\\s*enemy.+pos(.|\\n)+)status.*=",
-      "title": "you're gone now"
-    },
-    {
-      "file": "boardgame.py",
-      "description": "**update** canvas, removing previous board print:\n\nUses the lowlevel output module **stdout**, to \"take the carriage\" back each line, and clean'en.\n\nSo next print of the board will take the same place",
+      "description": "**update** canvas, removing previous board print:\n\n_Moved to loop start_\n\nIf not firts iteration, uses the lowlevel output module **stdout**, to \"take the carriage\" back each line, and clean'en.\n\nSo next print of the board will take the same place",
       "pattern": "(?<=for.+\n*).*stdout.write",
       "title": "updates canvas"
     }
