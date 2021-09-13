@@ -2,14 +2,18 @@
 
 <br />
 
-◻ make a board
+✔ make a board
 
-◻ place a character in there
+✔ place a character in there
 
-◻ put an obstacle too
+✔ put an obstacle too
 
-➡ allow player to move the character
+✔ the dog must had poop somewhere
 
-◻ make an enemy
+✔ allow player to move the character
 
-◻ get that villain moving
+✔ where's that food after all?
+
+✔ make an enemy
+
+➡ get that villain moving
