@@ -22,25 +22,19 @@
     },
     {
       "file": "boardgame.py",
-      "description": "Food is at any horizontal position, but always on top half of the board (since player starts at bottom)",
-      "pattern": "pos.+randrange.+cols",
-      "title": "food random distant location"
-    },
-    {
-      "file": "boardgame.py",
       "description": "### Create a \"game loop\"\n\nIt's a infinite loop, that will update the game status on each iteration, allowing us to make the moves and interactions\n\nSo, all _dynamic_ part's code must be wrapped by this loop.\nThe static definitions and structures should not.",
       "pattern": "^while\\s*True"
     },
     {
       "file": "boardgame.py",
       "description": "### Player Dies!\n\nAfter render (last canvas update), but before asking to move, check if player location is the same as the enemy.\n\nIf so, print that his/her is dead, and close the game by breaking the loop\n\nIf not, loop goes on normally",
-      "pattern": "(?<=if.+char.+pos.+==\\s*enemy.+pos(.|\\n)+)print",
+      "pattern": "(?<=if.+char.+status.+==.+dead(.|\\n)+)print",
       "title": "player dies"
     },
     {
       "file": "boardgame.py",
-      "description": "## Player Wins!\n\n_note that checking wining only **after**(and if not) dead_\n\nAfter render and not beeing dead, but before asking to move, check if player location is the same as the food.\n\nIf so, print winning message, and close the game.\n\nIf not, keeps looping",
-      "pattern": "(?<=if.+char.+pos.+==\\s*food.+pos(.|\\n)+)print",
+      "description": "## Player Wins!\n\nAfter render (last canvas update), but before asking to move, check player status for winning.\n\nIf so, print winning message, and close the game by breaking the loop\n\nIf not, loop goes on normally",
+      "pattern": "(?<=if.+char.+status.+==.+won(.|\\n)+)print",
       "title": "player win"
     },
     {
@@ -57,9 +51,9 @@
     },
     {
       "file": "boardgame.py",
-      "description": "Update character's status to \"died\", on touching the enemy.\n\nMust be on/after perform the move, close to loop end, so next iteration renders updated image.",
-      "pattern": "(?<=if.+char.+pos.+==\\s*enemy.+pos(.|\\n)+)status.*=",
-      "title": "you're gone now"
+      "description": "Update character's status to \"died\" or \"won\" accordingly, on touching the enemy.\n\nMust be on/after perform the move, close to loop end, so next iteration renders updated image.",
+      "pattern": "(?<=if.+char.+pos.+==\\s*.+pos(.|\\n)+)status.*=",
+      "title": "update status"
     },
     {
       "file": "boardgame.py",

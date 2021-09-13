@@ -10,7 +10,8 @@ cell = "🔳"  # ⬛
 char = {
 	"images": {
         "normal": "😀",
-        "dead": "💀"
+        "dead": "💀",
+        "won": "😋"
     },
     "status": "normal",
 	"pos": [2,4]  # [x,y]
@@ -42,6 +43,7 @@ while True:
                         char["status"]
                     ]
                 , end=" ")
+
             elif [c,l] == enemy["pos"]:
                 print(enemy["image"], end=" ")
             elif [c,l] == food["pos"]:
@@ -58,7 +60,7 @@ while True:
         sleep(1) # pauses 2 secs
         break
     # if user won, close game loop
-    if char["pos"] == food["pos"]:
+    if char["status"] == "won":
         print("You got it!!")
         sleep(1) # pauses 2 secs
         break
@@ -84,8 +86,9 @@ while True:
         char["pos"] = new_pos
         del new_pos
 
-    # if got to the food, makes a "yummy" face
+    # updates character's status
     if char["pos"] == enemy["pos"]: char["status"] = "dead"
+    elif char["pos"] == food["pos"]: char["status"] = "won"
 
     # update the screen, "returning carriage" before the last printed board
     for l in range(lines+3):
