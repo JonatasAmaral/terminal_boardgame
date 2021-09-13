@@ -10,6 +10,18 @@
     },
     {
       "file": "boardgame.py",
+      "description": "Create a new status attribute to in-game usage and manipulation",
+      "pattern": "(?<=char(.|\\n)+)status",
+      "title": "new status attr"
+    },
+    {
+      "file": "boardgame.py",
+      "description": "Create a image set for the character instead of a fixed one\n\nWill dynamic change the active based on char new \"status\" attribute",
+      "pattern": "(?<=char(.|\\n)+)images",
+      "title": "char's new multi images"
+    },
+    {
+      "file": "boardgame.py",
       "description": "Food is at any horizontal position, but always on top half of the board (since player starts at bottom)",
       "pattern": "pos.+randrange.+cols",
       "title": "food random distant location"
@@ -57,8 +69,8 @@
     },
     {
       "file": "boardgame.py",
-      "description": "Update character's expression to a \"yummy\" face, and status to \"won\", just after gettin to the food.\n\nMust be on/after perform the move, close to loop end, so next iteration renders updated image.",
-      "pattern": "(?<=if.+char.+pos.+==\\s*food.+pos(.|\\n)+)image.*=",
+      "description": "Update character's status to \"won\", just after gettin to the food.\n\nMust be on/after perform the move, close to loop end, so next iteration renders updated image.",
+      "pattern": "(?<=if.+char.+pos.+==\\s*food.+pos(.|\\n)+)status.*=",
       "title": "update face"
     },
     {
