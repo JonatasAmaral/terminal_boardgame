@@ -11,7 +11,8 @@ char = {
 	"images": {
         "normal": "😀",
         "dead": "💀",
-        "won": "😋"
+        "won": "😋",
+        "vomit": "🤮",
     },
     "status": "normal",
 	"pos": [cols//2,lines-1]  # [x,y]
@@ -60,9 +61,15 @@ while True:
                 print(cell, end=" ")
         print()
     
+    ## check and perform game terminating actions
     # if user gets to the enemy, dies
     if char["status"] == "dead":
         print("I think you may have died!")
+        sleep(1) # pauses 2 secs
+        break
+    # if user steps on poop, trows up
+    if char["status"] == "vomit":
+        print("ohh... lost my appetite")
         sleep(1) # pauses 2 secs
         break
     # if user won, close game loop
@@ -94,6 +101,7 @@ while True:
 
     # updates character's status
     if char["pos"] == enemy["pos"]: char["status"] = "dead"
+    elif char["pos"] == poop["pos"]: char["status"] = "vomit"
     elif char["pos"] == food["pos"]: char["status"] = "won"
 
     # update the screen, "returning carriage" before the last printed board
